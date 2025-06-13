@@ -1,0 +1,17 @@
+{ 
+    "LOGIN_URL": "https://www.bt.cn/login.html",  // 登录页面的 URL
+    "USERNAME": "eryrru7w",  // 登录用户名
+    "PASSWORD": "123456780",  // 登录密码
+    "XPATH_USERNAME": "//*[@id='app']/div/div/aside[3]/div/div[2]/div[1]/div/input", // 用户名输入框的 XPath
+    "XPATH_PASSWORD": "//*[@id='app']/div/div/aside[3]/div/div[2]/div[2]/div/input", // 密码输入框的 XPath
+    "XPATH_LOGIN_BUTTON": "//*[@id='app']/div/div/aside[3]/div/div[2]/div[5]/div/button", // 登录按钮的 XPath
+
+    "XPATH_CAPTCHA_INPUT": "", // 验证码输入框的 XPath
+    "XPATH_CAPTCHA_IMAGE": "//*[@id='login-container']/div[2]/div[1]/form[1]/div[3]/div/div/div/img", // 验证码图片的 XPath
+  
+
+    "DRIVER_PATH": "chromedriver.exe",  // ChromeDriver 的路径
+    "UMIOCR_PATH": "Umi-OCR_Rapid_v2.1.5/umi-ocr.exe", // Umi-OCR 的路径，用于识别验证码
+    "SUCCESS_URL_KEYWORD": "PacketRetrieval", // 登录成功后 URL 中的关键字，用于判断是否登录成功
+    "MAX_RETRIES": 5  // 最大重试次数
+}
