@@ -51,7 +51,8 @@ def recognize_captcha(driver, captcha_element):
         if os.path.exists(result_path):
             with open(result_path, "r", encoding='utf-8') as f:
                 result_text = f.read().strip()
-            captcha_code = ''.join(filter(str.isdigit, result_text))[:4]
+            # 保留所有字母和数字，不限制位数
+            captcha_code = ''.join(filter(str.isalnum, result_text))
             print(f"OCR识别结果: {captcha_code}")
             return captcha_code
         return ""
@@ -87,7 +88,7 @@ def auto_login_with_captcha():
 
         for attempt in range(5):
             captcha_code = recognize_captcha(driver, captcha_img)
-            if captcha_code.isdigit() and len(captcha_code) == 4:
+            if captcha_code:
                 captcha_input.clear()
                 captcha_input.send_keys(captcha_code)
                 login_btn.click()
