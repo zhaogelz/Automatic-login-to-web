@@ -6,20 +6,52 @@
 ## 前置准备
 
 安装 Python。
+确保项目的根目录下存在 `requirements.txt` 文件，其中列出了所有必要的 Python 依赖包（例如 `selenium`、`json5` 等）。如果不存在，请手动创建一个。
+
+## 用法
+
+1.  **下载并解压本项目**：获取文件夹 `Automatic-login-to-web`。
+2.  **进入项目目录**：确保您在 `Automatic-login-to-web` 文件夹内（能看到 `config.json5` 等文件）。
+
+3.  **创建并激活Python虚拟环境**：
+    -   打开命令行工具（如 CMD 或 PowerShell）。
+    -   运行以下命令创建虚拟环境（如果 `myenv` 目录已存在，请跳过此步或先删除）：
+        ```bash
+        python -m venv myenv
+        ```
+    -   激活虚拟环境：
+        -   在 Windows 上：
+            ```bash
+            .\myenv\Scripts\activate
+            ```
+        -   在 macOS 或 Linux 上：
+            ```bash
+            source myenv/bin/activate
+            ```
+4.  **安装依赖包**：
+    -   在虚拟环境激活状态下，运行以下命令安装所需依赖：
+        ```bash
+        pip install -r requirements.txt
+        ```
+
+5.  **配置 `config.json5`**：
+    -   用任意文本编辑器打开 `config.json5` 文件。
+    -   根据文件中的注释，填写以下信息：
+        -   你要登录的网页地址。
+        -   用户名和密码。
+        -   对应的用户名和密码输入框的 XPath（可自行百度，也可参考下方教程查找）。
+    -   **注意**：
+        -   如果有验证码，还需填写验证码及验证码图片的 XPath。
+        -   如果没有验证码，请将 `captchaInputXpath` 和 `captchaImageXpath` 字段留空或删除。
+
+6.  **运行主程序**：
+    -   在虚拟环境激活状态下，运行以下命令启动自动登录脚本：
+        ```bash
+        python new.py
+        ```
+    -   成功执行后，您可以通过命令行手动运行此命令，或为其创建一个桌面快捷方式。
 
 
-## 用法（配置好后，只需用快捷方式一键登陆）
-
-1. 下载并解压本项目，得到文件夹 `Automatic-login-to-web`。
-2. 进入文件夹 `Automatic-login-to-web`（文件夹内能看到 `config.json5` 等文件）。
-3. 用任意编辑器编辑文件 `config.json5`，根据注释填写以下信息：
-   - 你要登录的网页地址。
-   - 用户名和密码。
-   - 对应的用户名和密码输入框的 XPath（可自行百度，也可按后文教程查找）。  
-注：
-   - 如果有验证码，还需填写验证码及验证码图片的 XPath。
-   - 如果没有验证码，请不要修改验证码输入框的 XPath。
-4. 双击 run.bat 执行（成功执行后，可以创建run.bat的快捷方式丢桌面，以后就只需点击快捷方式就行）
 
 
 ## XPath 查找方法

@@ -1,0 +1,8 @@
+selenium
+json5
+ddddocr
+Pillow
+pytesseract
+opencv-python
+numpy
+requests
